@@ -9,6 +9,8 @@ var appName = 'Colaborador Doctum' ;
 var url_auth =  'api/geratoken';
 var url_verify =  'api/validatoken';
 var url_print = 'impressao';
+var url_down = 'download';
+var url_changepasswd = 'senha' ;
 
 
 var idonesignal = "7bf5d508-d86e-4c4d-ad52-80611a5759fa";

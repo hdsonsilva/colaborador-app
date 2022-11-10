@@ -21,7 +21,15 @@
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "cordova-plugin-browser": {
+      "ANDROIDX_BROWSER_VERSION": "1.0.+",
+      "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
+    }
+  }
 }

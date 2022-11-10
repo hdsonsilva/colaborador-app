@@ -134,13 +134,13 @@
         </div>
         <div class="row">
             <div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
-              <label for="registro" class="form-label" style="color: #12263f;">Registro:</label>
+              <label for="registro" class="form-label" style="color: #12263f;">Matrícula:</label>
               <input type="text" class="form-control" id='registro' placeholder="" aria-label="Registro" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="row">
   	        <div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
-    	  			<label for="login" class="form-label" style="color: #12263f;">Usuário:</label>
+    	  			<label for="login" class="form-label" style="color: #12263f;">CPF:</label>
     	  			<input type="text" class="form-control" id='login' placeholder="" aria-label="Username" aria-describedby="basic-addon1">
       			</div>
           </div>
@@ -162,9 +162,14 @@
         </div>
         <div class="row">
     			<div class="col-sm">
-    	  			<button type="button" class="w-100 btn btn-lg btn-primary" id='logar'>Entrar</button>
+    	  			<button type="button" class="w-100 btn btn-lg btn-primary" id='logar' style='background: #006e9c; border: 1px solid #006e9c'>Entrar</button>
       		</div>
         </div>
+        <div class="row">
+            <div class="col-sm" style="text-align: left !important;padding-bottom: 35px;padding-top: 35px">
+                <a href='#' onclick='esqueceu_senha()'>Esqueceu sua senha? </a>
+            </div>
+          </div>
         <div class="row">
           <div class="col-sm">
             <div id='login_success' class="alert alert-success" role="alert" style="display: none; width: 100%">

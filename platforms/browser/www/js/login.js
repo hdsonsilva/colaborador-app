@@ -84,14 +84,8 @@ function login(usuario, senha, registro, app){
 
 function deslogar(){
         showModal('show');
-        document.addEventListener('deviceready', function () {
-          
-          window.plugins.OneSignal.deleteTag("user");
         
-        }, false);
-
-        
-        setTimeout(direcionar, 2000, './index.html');
+        setTimeout(direcionar, 500, './index.html');
 
         return false ;
 

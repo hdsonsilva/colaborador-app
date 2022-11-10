@@ -278,6 +278,14 @@ module.exports = [
         "id": "cordova-plugin-statusbar.StatusBarProxy",
         "pluginId": "cordova-plugin-statusbar",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-browser/www/BrowserPlugin.js",
+        "id": "cordova-plugin-browser.BrowserPlugin",
+        "pluginId": "cordova-plugin-browser",
+        "merges": [
+            "cordova.plugins.browser"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -289,7 +297,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "6.0.0",
     "onesignal-cordova-plugin": "2.11.4",
     "cordova-plugin-device": "2.1.0",
-    "cordova-plugin-statusbar": "3.0.0"
+    "cordova-plugin-statusbar": "3.0.0",
+    "cordova-plugin-browser": "2.1.0"
 }
 // BOTTOM OF METADATA
 });

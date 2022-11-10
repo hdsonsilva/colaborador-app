@@ -31,6 +31,10 @@
             {
               "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"BrowserPlugin\"><param name=\"android-package\" value=\"by.chemerisuk.cordova.browser.BrowserPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -64,6 +68,18 @@
               "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"io.colaborador.doctum\" /></intent-filter></receiver>",
               "count": 1
             }
+          ],
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            }
+          ],
+          "/manifest/application/activity": [
+            {
+              "xml": "<intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:scheme=\"io.colaborador.doctum\" /></intent-filter>",
+              "count": 1
+            }
           ]
         }
       }
@@ -83,6 +99,13 @@
       "PACKAGE_NAME": "io.colaborador.doctum"
     },
     "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "cordova-plugin-browser": {
+      "ANDROIDX_BROWSER_VERSION": "1.0.+",
       "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
@@ -127,6 +150,14 @@
       "clobbers": [
         "window.StatusBar"
       ]
+    },
+    {
+      "id": "cordova-plugin-browser.BrowserPlugin",
+      "file": "plugins/cordova-plugin-browser/www/BrowserPlugin.js",
+      "pluginId": "cordova-plugin-browser",
+      "merges": [
+        "cordova.plugins.browser"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -134,6 +165,8 @@
     "cordova-plugin-splashscreen": "6.0.0",
     "onesignal-cordova-plugin": "2.11.4",
     "cordova-plugin-device": "2.1.0",
-    "cordova-plugin-statusbar": "3.0.0"
+    "cordova-plugin-statusbar": "3.0.0",
+    "cordova-support-android-plugin": "2.0.4",
+    "cordova-plugin-browser": "2.1.0"
   }
 }

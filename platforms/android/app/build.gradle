@@ -290,6 +290,7 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     implementation "com.onesignal:OneSignal:3.16.0"
+    implementation "androidx.browser:browser:1.0.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

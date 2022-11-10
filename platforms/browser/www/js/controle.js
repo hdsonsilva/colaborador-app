@@ -25,15 +25,13 @@ function controle(event){
 
     
     //Se estiver na pagina Academico
-    else if(event.target.matches('#pageNotas')){
+    else if(event.target.matches('#pageIrrf')){
       dados = {
-        'apitoken': localStorage.getItem('token'),
-        'periodo_letivo': localStorage.getItem('periodoletivo'),
-        'offset' : localStorage.getItem('offset_avisos')
+        'token': localStorage.getItem('token')
       }
-      $('#pageNotasList').html('');
+      $('#pageIrrfList').html('');
 
-      buscaAcoes('alunos/api/notas/ver-notas',dados,tipoenvio);
+      buscaAcoes('/api/busca-demonstrativoirrf',dados,tipoenvio);
     }
 
     //Se estiver na pagina Academico

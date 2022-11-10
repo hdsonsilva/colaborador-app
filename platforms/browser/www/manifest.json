@@ -8,5 +8,6 @@
   "author": "Equipe de Desenvolvimento Mobile - Doctum",
   "icons": [],
   "orientation": "portrait",
-  "start_url": "index.html"
+  "start_url": "index.html",
+  "theme_color": "#FFFFFF"
 }

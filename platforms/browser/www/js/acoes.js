@@ -62,9 +62,9 @@ function retornoAcao(acao, retorno){
     if(acao == '/api/busca-holerite') {
         view_holerite(retorno);
     }
-    else if(acao == 'alunos/api/mural/ver-recados'){
+    else if(acao == '/api/busca-demonstrativoirrf'){
         
-        view_bilhetes(retorno);
+        view_irrf(retorno);
     }
     else if(acao == 'alunos/api/horario'){
         view_horario(retorno);

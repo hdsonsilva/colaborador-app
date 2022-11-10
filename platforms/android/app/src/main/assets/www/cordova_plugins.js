@@ -39,6 +39,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "window.StatusBar"
       ]
+    },
+    {
+      "id": "cordova-plugin-browser.BrowserPlugin",
+      "file": "plugins/cordova-plugin-browser/www/BrowserPlugin.js",
+      "pluginId": "cordova-plugin-browser",
+      "merges": [
+        "cordova.plugins.browser"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -46,6 +54,8 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-splashscreen": "6.0.0",
     "onesignal-cordova-plugin": "2.11.4",
     "cordova-plugin-device": "2.1.0",
-    "cordova-plugin-statusbar": "3.0.0"
+    "cordova-plugin-statusbar": "3.0.0",
+    "cordova-support-android-plugin": "2.0.4",
+    "cordova-plugin-browser": "2.1.0"
   };
 });

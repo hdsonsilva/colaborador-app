@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
-  <title>Agenda Escolar</title>
+  <title>Colaborador Doctum</title>
   <script src="lib/onsen/js/onsenui.js"></script>
    <script src="js/config.js"></script>
   
   <script src="./js/jquery-3.4.1.js"></script>
-  <script src="./js/documentViewer.js"></script>
+  
   <script src="cordova.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="./js/login.js"></script>
   <script src="./js/acoes.js"></script>
-  <script src="./js/cadastronovamensagem.js"></script>
-  <script src="./js/marcarrecado.js"></script>
-  <script src="./js/removeacentos.js"></script>
 
+  <script src="./js/removeacentos.js"></script>
   <script src="./js/controle.js"></script>
   <script src="./js/view_home.js"></script>
   <script src="./js/view_holerite.js"></script>
-  <script src="./js/view_bilhetes.js"></script>
+  <script src="./js/view_irrf.js"></script>
   <script src="./js/view_recadoenviado.js"></script>
   <script src="./js/view_horario.js"></script>
-  <script src="./js/view_agenda.js"></script>
-  <script src="./js/view_academico.js"></script>
-  <script src="./js/view_detalhesnota.js"></script>
 
   <script src="./js/function.js"></script>
   <script src="./js/push.js"></script>
@@ -71,6 +66,7 @@
       //Verificando se tem alguma ação  a ser feita: esperando um tempo para chamar o metodo
       retorno = retornaparametro();
       setTimeout(exibirtab, 500, retorno);
+
       
       /*
       document.addEventListener('deviceready', function () {
@@ -78,24 +74,18 @@
           cordova.plugins.backgroundMode.enable();
 
       }, false);*/
+      document.addEventListener('deviceready', function () {
+
+        StatusBar.overlaysWebView(true);
+        StatusBar.backgroundColorByHexString("#006e9c");
+      });
 
       setTimeout(
         function(){
           $('#buttontop').css('width',$('#ladoesquerdo').css('width')); 
-         
-         
-            
-          
-
-          $('#periodo_letivo').val(localStorage.getItem('periodoletivo'));
-          
-
           //Redimensionando o menu do sistema
           document.addEventListener('deviceready', function () {
-            cordova.getAppVersion.getVersionNumber().then(function (version) {
-              $('#VersaoSoftware').html("Versão APP "+version);
-            });
-
+            
             //Alterando altura da barra de menu do app
             if(device.platform.toUpperCase() === 'ANDROID'){
               $('.padding_padrao').height('60px'); 
@@ -103,6 +93,9 @@
             else{
               $('.padding_padrao').height('50px');
             }
+
+            
+
           });
         },
         500);
@@ -168,20 +161,11 @@
         </ons-tab>
         <ons-tab id='activeHolerite' page="html/page_holerite.html" label="Holerite" icon="fa-credit-card">
         </ons-tab>
-        <ons-tab id='activeBilhetes' page="html/page_bilhetes.html" label="IRRF" icon="fa-comment">
+        <ons-tab id='activeIrrf' page="html/page_irrf.html" label="IRRF" icon="fa-credit-card">
         </ons-tab>
 
-        <ons-tab id='activeAgenda' label="Cadastro" page="html/page_agenda.html" icon="fa-calendar">
+        <ons-tab id='activeAgenda' label="Ajuda" page="html/page_ajuda.html" icon="fa-comment">
         </ons-tab>
-        
-        </ons-tab>
-        <ons-tab id='activeNotas' page="html/page_notas.html" label="Assinatura" icon="fa-address-book">
-        </ons-tab>
-        <!-- <ons-tab id='activeBilhetes' page="html/page_novorecado.html" label="Recados" icon="fa-comment">
-        </ons-tab> -->
-        
-
-
       </ons-tabbar>
     </ons-page>
   </template>

@@ -21,6 +21,9 @@
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "cordova-plugin-browser": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
   "dependent_plugins": {}

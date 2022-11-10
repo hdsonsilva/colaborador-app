@@ -244,7 +244,7 @@ function imprimir(ano, mes){
 }
 
 function esqueceu_senha(){
-  cordova.InAppBrowser.open(server+'/newsenha','_blank');  
+  cordova.plugins.browser.open(server+'/newsenha');  
 }
 function alterar_senha(){
 

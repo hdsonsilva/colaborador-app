@@ -239,45 +239,26 @@ function abrirURL( pagina , sem_token){
 }*/
 function imprimir(ano, mes){
 
-  cordova.InAppBrowser.open(server+'/'+url_print+'?mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'),'_system');
+  cordova.InAppBrowser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'),'_system');
 
 }
-function abrirNavigator( pagina , forcar_ios){
-      let tipo ;
 
-      if(debug == 1){
-        if( pagina.indexOf('?') > 0 ){
-          window.open(pagina+"&apitoken="+localStorage.getItem("token")+"&periodo_letivo="+localStorage.getItem('periodoletivo'),'_blank');
-        }
-        else{
-          window.open(pagina+"?apitoken="+localStorage.getItem("token")+"&periodo_letivo="+localStorage.getItem('periodoletivo'),'_blank');
-        }
-        return true;
-      }
-      if(forcar_ios != 'forcar'){
-        tipo = '_blank';
-      }
-      else{
-        tipo = '_system';
-      }
-      //Retirado verificacao se é sem token ou nao... sempre envia token
-      
-      if (device.platform.toUpperCase() === 'ANDROID') {
-        if( pagina.indexOf('?') > 0 ){
-          cordova.InAppBrowser.open(pagina+"&apitoken="+localStorage.getItem("token")+"&periodo_letivo="+localStorage.getItem('periodoletivo'),"_system", "location=yes");
-        }
-        else{
-          cordova.InAppBrowser.open(pagina+"?apitoken="+localStorage.getItem("token")+"&periodo_letivo="+localStorage.getItem('periodoletivo'),"_system", "location=yes"); 
-        }
-      }
-      else{ 
-        if( pagina.indexOf('?') > 0 ){
-          cordova.InAppBrowser.open(pagina+"&apitoken="+localStorage.getItem("token")+"&periodo_letivo="+localStorage.getItem('periodoletivo'),tipo, "location=yes");
-        }
-        else{
-          cordova.InAppBrowser.open(pagina+"?apitoken="+localStorage.getItem("token")+"&periodo_letivo="+localStorage.getItem('periodoletivo'),tipo, "location=yes"); 
-        } 
-      }
+function esqueceu_senha(){
+  cordova.plugins.browser.open(server+'/newsenha');  
+}
+function alterar_senha(){
+
+  cordova.InAppBrowser.open(server+'/'+url_changepasswd+'?token='+localStorage.getItem('token'),'_blank');
+
+}
+
+function downloadd(arquivo){
+
+  cordova.InAppBrowser.open(server+'/'+url_down+'?arquivo='+arquivo+'&acao=inline&token='+localStorage.getItem('token'),'_system');
+
+}
+function abrirNavigator( pagina ){
+      cordova.InAppBrowser.open(pagina,'_system');
 }
 
 function abrirURL( pagina , sem_token){

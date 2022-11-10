@@ -17,6 +17,9 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="BrowserPlugin">
+        <param name="android-package" value="by.chemerisuk.cordova.browser.BrowserPlugin" />
+    </feature>
     <name>Colaborador Doctum</name>
     <description>
         Aplicativo os colaboradores da Rede de Ensino Doctum. Consulte seus vencimentos, atualize seus dados cadastrais e mais...
