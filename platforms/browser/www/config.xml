@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.colaborador.doctum" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.1" xmlns:gap="http://phonegap.com/ns/1.1">
+    <name>Colaborador Doctum</name>
+    <description>
+        Aplicativo os colaboradores da Rede de Ensino Doctum. Consulte seus vencimentos, atualize seus dados cadastrais e mais...
+    </description>
+    <author email="contato@doctum.edu.br" href="http://www.doctum.edu.br">
+        Equipe de Desenvolvimento Mobile - Doctum
+    </author>
+    <gap:plugin name="onesignal-cordova-plugin" source="npm" spec="2.11.4" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="android-minSdkVersion" value="27" />
+    <preference name="Orientation" value="portrait" />
+</widget>

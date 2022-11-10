@@ -1,0 +1,38 @@
+<ons-page id="pageNovoRecadoIndividual">
+	<ons-toolbar id='titulomsg2'  class='padding_padrao modificarcor'>
+       <div class="left">
+                     <!-- Toolbar-button  only visible for iOS/other. -->
+        <ons-toolbar-button id="bt_voltar_appp2" component="buttonreload">
+          <!--<ons-icon icon="fa-undo"></ons-icon>-->
+           <ons-icon icon="md-arrow-left"  style='color:white;'></ons-icon>
+        </ons-toolbar-button>
+      </div>
+        <div class="center" id="tituloAppNew" style='color:white;'>Enviar Mensagem</div>
+        <div class="right">
+        
+        </div>
+  </ons-toolbar>
+  <br><br>
+  <div style="height: 100px; padding: 1px 0 0 0;">
+    <div class="card card--material">
+      <div class="card__content card--material__content"><strong>Envio de mensagem:</strong><br>Escolha abaixo um departamento ou professor para enviar a mensagem. </div>
+    </div>
+  </div>
+  <div class="card card--material">
+      <div class="card__content card--material__content">
+        <div id='seletorindividual' class='envioindividual'>
+        </div>
+      </div>
+  </div>
+  <div style="height: 100px; padding: 1px 0 0 0;">
+    <div class="card card--material">
+          <div class='divcaixatextareamsgindividual envioindividual'>
+                <textarea class="textareamsg" id='mensagemnovorecadoindividual' rows="4" placeholder="Digite aqui seu recado..."></textarea> 
+                <ons-button  id="idcadastrarnovorecadoindividual" class='minhalinhadigitavel'><ons-icon icon='md-mail-send'></ons-icon>  Enviar</ons-button>
+                
+          </div>
+
+    </div>
+  </div>
+</ons-page>
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- JS dependencies (order matters!) -->
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+      <!-- --------------- App init --------------- -->
+
+    <title>Ecossistema</title>
+
+    <style>
+       
+    .fundo{
+      position: absolute;
+       width: 100%;
+       height: 95%;
+       
+    }
+    .interno{
+      position: relative;
+      margin-top: 120px;
+      margin-bottom: 100px;
+       width: 100%;
+       height: 80%;
+       
+    }
+     .login{
+        margin: 5% auto ;
+        text-align: center;
+        width: 90%;
+        height: 100%;
+        background: white;
+        -webkit-box-shadow: 1px 1px 20px rgba(50, 50, 50, 0.77);
+        -moz-box-shadow:    1px 1px 20px rgba(50, 50, 50, 0.77);
+        box-shadow:         1px 1px 20px rgba(50, 50, 50, 0.77);
+        font-family: Arial;
+        color: gray;
+     }
+
+    </style>
+
+
+</head>
+<body>
+<ons-page  modifier="menu-page" >
+    
+    <!-- Cordova reference -->
+    <script src="./js/config.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./cordova.js"></script> 
+    <script src="./scripts/index.js"></script>
+    <script src="./js/cadastro.js"></script>
+    <script src="./js/function.js"></script>
+    <script type="text/javascript">
+    var auth_check ;
+    auth_check = 0 ;
+
+    
+    $(document).ready(function(){
+
+      $('#login, #password').focus(function(){
+          $('#imagemCadastro').hide(600);
+      });
+      
+      // Cadastrando usuario, após autenticar login
+      $('#logar').click( function(e) {
+      	$('#imagemCadastro').show(600);
+        auth_check = 0 ;
+        //Escondendo botao no inicio do processo de login
+        $('#button').hide();
+        $('#progress').show();
+        login($('#login').val(),$('#password').val());
+    });
+ 
+
+    
+  });
+
+
+   
+    </script>
+
+  
+
+    <div class='login'>
+        <div class='interno'>
+        
+        <p style='margin-bottom: 40px;position:relative'>
+          <div id='imagemCadastro'>
+          <img src='./img/doctum.jpg' width="50%">
+        </div>
+        </p>
+        
+        <p style='margin-bottom: 40px;position:relative'>
+          <ons-input id="login"   modifier="underbar" type="number" placeholder="Usuário" float></ons-input>
+        </p>
+        
+        <p style='margin-bottom: 40px;position:relative'>
+            <ons-input id="password"  modifier="underbar" type="password" placeholder="Senha" float></ons-input>
+        </p>
+        
+        <p id='button'>
+            <ons-button id='logar'>Entrar</ons-button>
+        </p>
+        <p id='progress' style="display:none";position:relative>
+            <ons-progress-bar indeterminate></ons-progress-bar>
+        </p>
+        <p style='margin-bottom: 40px;position:relative;text-align:justify;'>
+            Você deve usar o usuário e senha que já possui. Caso não saiba seus dados,  entre em contato com nossa central de atendimento.</p>
+            <p style='margin-bottom: 40px;position:relative;text-align:justify;'>
+            O app é acessado usando seu usuário e senha do sistema web Ecossistema.
+            </p>
+            <p style='margin-bottom: 40px;position:relative;text-align:justify;'>
+            Dúvidas? Fale conosco: 0800 033 1100
+        </p>
+        
+    </div>
+    <div class='positionbottom'>
+        <ons-fab id="excluiruser">
+          <ons-icon icon="md-delete"></ons-icon> Apagar Usuários
+        </ons-fab>
+    </div>
+
+    <ons-alert-dialog id="alert-dialog" modifier="rowfooter" >
+    <div class="alert-dialog-title">Exclusão de usuários</div>
+    <div class="alert-dialog-content">
+      Atenção, essa ação irá apagar os usuários e senhas armazenados.<br><br>
+      Deseja remover os usuários cadastrados no aplicativo? 
+    </div>
+    <div class="alert-dialog-footer">
+      <ons-alert-dialog-button id='bt_cancelar'>Cancelar</ons-alert-dialog-button>
+
+      <ons-alert-dialog-button id='bt_ok'>OK</ons-alert-dialog-button>
+    </div>
+  </ons-alert-dialog>
+
+  <ons-alert-dialog id="alert-ok" modifier="rowfooter" >
+    <div class="alert-dialog-title">Exclusão de usuários</div>
+    <div class="alert-dialog-content">
+      Ok. Usuários apagados com sucesso.
+    </div>
+    <div class="alert-dialog-footer">
+      <ons-alert-dialog-button id='bt_ok2'>OK</ons-alert-dialog-button>
+    </div>
+  </ons-alert-dialog>
+</ons-page>
+
+</body>
+</html>

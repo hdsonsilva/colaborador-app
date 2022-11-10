@@ -1,0 +1,29 @@
+<html>
+<body>
+<style>
+	#outer {height: 98%; overflow: hidden; position: relative;background: white;}
+	#outer[id] {display: table; position: static;background: white;}
+
+	#middle {position: absolute; top: 50%;background: white;} /* For explorer only*/
+	#middle[id] {display: table-cell; vertical-align: middle; width: 98%;background: white;}
+
+	#inner {position: relative; top: -50%; text-align: center;background: white;} /* For explorer only */
+	/* Optional: #inner[id] {position: static;} */
+</style>	
+<div id="outer">
+  <div id="middle">
+    <div id="inner">
+      <img src='./img/loading.gif' width="10%">
+    </div>
+  </div>
+</div>
+<div class="center">
+	
+</div>
+<script>
+	setTimeout(function(){ window.location.href  = 'https://ecossistema.doctum.edu.br/acesso/autenticacao'; }, 1000);
+
+</script>	
+</body>
+
+</html>

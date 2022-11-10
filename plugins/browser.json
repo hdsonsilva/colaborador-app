@@ -1,0 +1,27 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.ecossis.doctum"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "io.ecossis.doctum2"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "io.ecossis.doctum2"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.ecossis.doctum2"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
+    }
+  },
+  "dependent_plugins": {}
+}

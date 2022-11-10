@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Colaborador Doctum",
+  "short_name": "Colaborador Doctum",
+  "version": "io.colaborador.doctum",
+  "description": "Aplicativo os colaboradores da Rede de Ensino Doctum. Consulte seus vencimentos, atualize seus dados cadastrais e mais...",
+  "author": "Equipe de Desenvolvimento Mobile - Doctum",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}

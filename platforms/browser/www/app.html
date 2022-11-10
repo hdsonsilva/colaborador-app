@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+  <title>Agenda Escolar</title>
+  <script src="lib/onsen/js/onsenui.js"></script>
+   <script src="js/config.js"></script>
+  
+  <script src="./js/jquery-3.4.1.js"></script>
+  <script src="./js/documentViewer.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="./js/acoes.js"></script>
+  <script src="./js/cadastronovamensagem.js"></script>
+  <script src="./js/marcarrecado.js"></script>
+  <script src="./js/removeacentos.js"></script>
+
+  <script src="./js/controle.js"></script>
+  <script src="./js/view_home.js"></script>
+  <script src="./js/view_holerite.js"></script>
+  <script src="./js/view_bilhetes.js"></script>
+  <script src="./js/view_recadoenviado.js"></script>
+  <script src="./js/view_horario.js"></script>
+  <script src="./js/view_agenda.js"></script>
+  <script src="./js/view_academico.js"></script>
+  <script src="./js/view_detalhesnota.js"></script>
+
+  <script src="./js/function.js"></script>
+  <script src="./js/push.js"></script>
+
+
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <style>
+    .centralizada{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); 
+     }
+  </style>
+  <script>
+     var auth_check = 0 ;
+
+    ////////////////////// CONTROLADOR //////////////////////////////////
+
+
+      //Atualizando a lista de tarefas para o usuario
+      document.addEventListener('show', function(event) {
+      
+      $('#buttontop').html("");
+      //Verifica a pagina selecionada
+       controle(event);
+
+
+      }, false);
+
+      
+    $(document).ready(function(){
+      ////////////////////// VERIFICACAO DE AUTH /////////////////////////////////
+      verifica_auth();
+      setInterval(verifica_auth, localStorage.getItem( 'app_timeverify_auth' ));
+
+      //Verificando se tem alguma ação  a ser feita: esperando um tempo para chamar o metodo
+      retorno = retornaparametro();
+      setTimeout(exibirtab, 500, retorno);
+      
+      /*
+      document.addEventListener('deviceready', function () {
+          // cordova.plugins.backgroundMode is now available
+          cordova.plugins.backgroundMode.enable();
+
+      }, false);*/
+
+      setTimeout(
+        function(){
+          $('#buttontop').css('width',$('#ladoesquerdo').css('width')); 
+         
+         
+            
+          
+
+          $('#periodo_letivo').val(localStorage.getItem('periodoletivo'));
+          
+
+          //Redimensionando o menu do sistema
+          document.addEventListener('deviceready', function () {
+            cordova.getAppVersion.getVersionNumber().then(function (version) {
+              $('#VersaoSoftware').html("Versão APP "+version);
+            });
+
+            //Alterando altura da barra de menu do app
+            if(device.platform.toUpperCase() === 'ANDROID'){
+              $('.padding_padrao').height('60px'); 
+            }
+            else{
+              $('.padding_padrao').height('50px');
+            }
+          });
+        },
+        500);
+      
+      
+    });
+
+    
+  </script>
+
+  <!-- First navigation component: Navigator. This will remain always on top of the app. -->
+  <ons-navigator id="myNavigator" page="splitter.html"> 
+  </ons-navigator>
+
+<input type='hidden' id='acao'>
+  <!-- Second navigation component: Splitter. This will disappear if the first component changes its content. -->
+  <template id="splitter.html">
+    <ons-page>
+      <ons-splitter id="mySplitter">
+        <ons-splitter-side page="html/menu.html" swipeable width="250px" collapse swipe-target-width="50px">
+        </ons-splitter-side>
+        <ons-splitter-content page="tabbar.html">
+        </ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </template>
+
+  <!-- Third navigation component: Tabbar. This will disappear if the first or second components change their content. -->
+  <template id="tabbar.html">
+    <ons-page id="tabbarPage">
+      <ons-toolbar class='modificarcor padding_padrao'>
+      
+        <div class="left" id='ladoesquerdo' >
+          <!-- Toolbar-button with different icons depending on the platform. -->
+          <ons-toolbar-button component="button/menu" style="height: 26px;">
+            <ons-icon style="color:white;vertical-align: bottom;" icon="ion-navicon, material:md-menu" size="32px, material:24px"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+
+        <div class="center" id="tituloApp_">
+            
+        </div>
+
+        <div class="right" id="buttontop" style="text-align: right;color:white;">
+         
+        </div>
+      
+      </ons-toolbar>
+
+      <!-- Floating Action Button only visible for Android. -->
+      <!--
+      <ons-if platform="android">
+        <ons-fab position="right bottom" component="button/new-task">
+          <ons-icon icon="md-edit"></ons-icon>
+        </ons-fab>
+      </ons-if>
+      -->
+      <!-- Auto-positioned Tabbar: top on Android, bottom on iOS/other. -->
+      
+      <ons-tabbar id="myTabbar" swipeable position="bottom">
+
+        <ons-tab id='activehome' page="html/home_page.html" active  label="Home"  icon="fa-home">
+        </ons-tab>
+        <ons-tab id='activeHolerite' page="html/page_holerite.html" label="Holerite" icon="fa-credit-card">
+        </ons-tab>
+        <ons-tab id='activeBilhetes' page="html/page_bilhetes.html" label="IRRF" icon="fa-comment">
+        </ons-tab>
+
+        <ons-tab id='activeAgenda' label="Cadastro" page="html/page_agenda.html" icon="fa-calendar">
+        </ons-tab>
+        
+        </ons-tab>
+        <ons-tab id='activeNotas' page="html/page_notas.html" label="Assinatura" icon="fa-address-book">
+        </ons-tab>
+        <!-- <ons-tab id='activeBilhetes' page="html/page_novorecado.html" label="Recados" icon="fa-comment">
+        </ons-tab> -->
+        
+
+
+      </ons-tabbar>
+    </ons-page>
+  </template>
+<ons-dialog id="my-dialog">
+  <div style="text-align: center; padding: 10px;">
+    <p>
+      <textarea class="textarea textarea--transparent" id='conteudodialog' rows="4" placeholder="Textarea"></textarea>
+    </p>
+
+    <p>
+      <ons-button onclick="document.getElementById('my-dialog').hide();">Fechar</ons-button>
+    </p>
+  </div>
+</ons-dialog>
+
+<ons-modal direction="up" style='background: none !important;'>
+  <div style="text-align: center">
+    <p>
+      <svg class="progress-circular progress-circular--indeterminate">
+        <circle class="progress-circular__background"/>
+        <circle class="progress-circular__primary progress-circular--indeterminate__primary"/>
+        <circle class="progress-circular__secondary progress-circular--indeterminate__secondary"/>
+      </svg>
+    </p>
+  </div>
+</ons-modal>
+</body>
+
+</html>

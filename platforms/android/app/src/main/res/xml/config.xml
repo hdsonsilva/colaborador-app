@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.colaborador.doctum" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.1" xmlns:gap="http://phonegap.com/ns/1.1">
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>Colaborador Doctum</name>
+    <description>
+        Aplicativo os colaboradores da Rede de Ensino Doctum. Consulte seus vencimentos, atualize seus dados cadastrais e mais...
+    </description>
+    <author email="contato@doctum.edu.br" href="http://www.doctum.edu.br">
+        Equipe de Desenvolvimento Mobile - Doctum
+    </author>
+    <gap:plugin name="onesignal-cordova-plugin" source="npm" spec="2.11.4" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <allow-intent href="market:*" />
+    <resource-file src="resources/android/onesignal/res/drawable-mdpi-icon.png" target="app/src/main/res/drawable-mdpi/ic_stat_onesignal_default.png" />
+    <resource-file src="resources/android/onesignal/res/drawable-hdpi-icon.png" target="app/src/main/res/drawable-hdpi/ic_stat_onesignal_default.png" />
+    <resource-file src="resources/android/onesignal/res/drawable-xhdpi-icon.png" target="app/src/main/res/drawable-xhdpi/ic_stat_onesignal_default.png" />
+    <resource-file src="resources/android/onesignal/res/drawable-xxhdpi-icon.png" target="app/src/main/res/drawable-xxhdpi/ic_stat_onesignal_default.png" />
+    <resource-file src="resources/android/onesignal/res/drawable-xxxhdpi-icon.png" target="app/src/main/res/drawable-xxxhdpi/ic_stat_onesignal_default.png" />
+    <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+    <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
+    <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
+    <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
+    <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
+    <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
+    <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="android-minSdkVersion" value="27" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
+</widget>

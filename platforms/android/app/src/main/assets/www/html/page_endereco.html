@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="viewport-fit=cover, initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="../lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="../lib/onsen/css/onsen-css-components.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <!-- JS dependencies (order matters!) -->
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../lib/onsen/js/onsenui.js"></script>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    
+      <!-- --------------- App init --------------- -->
+
+    <title>Agenda Escolar</title>
+
+    <style>
+    #map {
+        height: 100%;
+    }
+
+    .fundo{
+      position: absolute;
+       width: 100%;
+       height: 95%;
+       
+    }
+    .interno{
+      position: relative;
+      margin-top: 100px;
+      margin-bottom: 100px;
+       width: 100%;
+       height: 100%;
+       
+    }
+     .login{
+        margin: 5% auto ;
+        text-align: center;
+        width: 90%;
+        height: 100%;
+        background: white;
+        -webkit-box-shadow: 1px 1px 20px rgba(50, 50, 50, 0.77);
+        -moz-box-shadow:    1px 1px 20px rgba(50, 50, 50, 0.77);
+        box-shadow:         1px 1px 20px rgba(50, 50, 50, 0.77);
+        font-family: Arial;
+        color: gray;
+     }
+
+    </style>
+
+
+</head>
+<body>
+<!-- Cordova reference -->
+<script src="../js/config.js"></script>
+<script src="../cordova.js"></script> 
+<script src="../scripts/index.js"></script>
+<script src="../js/cadastro.js"></script>
+<script src="../js/function.js"></script>
+<script>
+    
+
+    $(document).ready(function(){
+      
+      
+      $('#bt_voltar').click(function(){
+
+        direcionar("../app.html");
+
+      });
+
+      setTimeout(
+        function(){
+          //Redimensionando o menu do sistema
+          document.addEventListener('deviceready', function () {
+            cordova.getAppVersion.getVersionNumber().then(function (version) {
+              $('#VersaoSoftware').html("Versão APP "+version);
+            });
+
+            //Alterando altura da barra de menu do app
+            if(device.platform.toUpperCase() === 'ANDROID'){
+              $('.padding_padrao').height('60px'); 
+            }
+            else{
+              $('.padding_padrao').height('50px');
+            }
+          });
+        },
+        500);
+
+      if(localStorage.getItem('unidade') == 'col_liber_ctga'){
+        $('#enderecounidade').html("Rua João Pinheiro, 147 - Centro<br>Caratinga/MG<br>35300-037<br><br>Telefone: <a href='tel:03333226232'>(33) 3322-6232</a>"  );
+
+        $('#enderecounidademapa').attr('src',"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d608.5700079578193!2d-42.14323490032195!3d-19.79027014904872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xba91b6e78223d7%3A0xefa1c4ff2d1c8ed6!2sEscola%20L%C3%ADber!5e0!3m2!1spt-BR!2sbr!4v1663179265145!5m2!1spt-BR!2sbr");
+      }
+
+      if(localStorage.getItem('unidade') == 'col_serra'){
+        $('#enderecounidade').html("Av. Eldes Scherrer Souza, 108<br>Parque Res. Laranjeiras<br>Serra - ES<br>29165-680<br><br>Telefone: <a href='tel:02730647801'>(27) 3064-7801</a>");
+
+        $('#enderecounidademapa').attr('src',"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.492668616551!2d-40.24443838453687!3d-20.196838486454904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e968169335b%3A0x432d0220709b683!2sCol%C3%A9gio%20Americano%20Serra!5e0!3m2!1spt-BR!2sbr!4v1663180726078!5m2!1spt-BR!2sbr");
+      }
+
+      if(localStorage.getItem('unidade') == 'col_vila'){
+        $('#enderecounidade').html("R. Lúcio Bacelar, 490<br>Praia da Costa<br>Vila Velha - ES<br>29101-030<br><br>Telefone: <a href='tel:02730619205'>(27) 3061-9205</a>");
+
+        $('#enderecounidademapa').attr('src',"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.2836792331536!2d-40.27728128453538!3d-20.329896286381153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8165313d6c617%3A0xe93c283f3768e0aa!2sCol%C3%A9gio%20Americano%20Vila%20Velha!5e0!3m2!1spt-BR!2sbr!4v1663180912303!5m2!1spt-BR!2sbr");
+      }
+      
+      if(localStorage.getItem('unidade') == 'col_gpi'){
+        $('#enderecounidade').html("R. Ernestina Viêira Simões, 218<br>Olaria<br>Guarapari - ES<br>29200-020<br><br>Telefone: <a href='tel:02733620044'>(27) 3362-0044</a>");
+
+        $('#enderecounidademapa').attr('src',"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.934923781571!2d-40.513509284530976!3d-20.672226386192534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb857b50ea4e0f1%3A0x4d100294d2c95f15!2sCol%C3%A9gio%20Americano%20Guarapari!5e0!3m2!1spt-BR!2sbr!4v1663181011255!5m2!1spt-BR!2sbr");
+      }
+
+    });
+    
+
+    </script>
+<ons-page  modifier="menu-page" >
+    <ons-toolbar  class='padding_padrao modificarcor'>
+      <div class="left">
+                     <!-- Toolbar-button  only visible for iOS/other. -->
+        <ons-toolbar-button id="bt_voltar" component="buttonreload"  style="color: white !important;">
+          <!--<ons-icon icon="fa-undo"></ons-icon>-->
+           <ons-icon icon="md-arrow-left"></ons-icon>
+        </ons-button>
+      </div>
+
+      <div class="center"  style="color: white !important;">Onde estamos</div>
+      <div class="right" style="color:#56c2cd">
+        .
+        
+        </ons-button>
+      </div>
+    </ons-toolbar>
+    
+      <br><br>
+        <p style='margin-bottom: 20px;position:relative;text-align: center'>
+          <div id='imagemCadastro' style="text-align: center">
+          <img src='../img/LogoSemNome100x153.png' width="30%">
+        </div>
+        </p>
+        
+         <ons-card>
+            <font class='font_tam3'>Fale Conosco</font></font>
+            <p style='margin-bottom: 10px;position:relative;text-align:justify;font-size: 10pt;' id='enderecounidade'>
+            </p>
+         </ons-card>
+
+         <ons-card>
+            <iframe id='enderecounidademapa' src="" frameborder="0" width="100%" height="400px"></iframe>
+         </ons-card>
+        
+        
+      
+    
+</ons-page>
+
+</body>
+</html>

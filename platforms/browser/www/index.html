@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="app" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" >
+	<script src="./js/bootstrap.bundle.min.js" ></script>
+
+    <!-- JS dependencies (order matters!) -->
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="./js/onesignal.js"></script>
+    <script src="./js/push.js"></script>
+      <!-- --------------- App init --------------- -->
+
+    <title>Colaborador Doctum</title>
+
+    <style>
+       
+    .fundo{
+      position: absolute;
+       width: 100%;
+       height: 95%;
+       
+    }
+    .interno{
+      position: relative;
+      margin-top: 120px;
+      margin-bottom: 100px;
+       width: 100%;
+       height: 80%;
+       
+    }
+     .login{
+        margin: 5% auto ;
+        text-align: center;
+        width: 90%;
+        height: 100%;
+        background: white;
+        -webkit-box-shadow: 1px 1px 20px rgba(50, 50, 50, 0.77);
+        -moz-box-shadow:    1px 1px 20px rgba(50, 50, 50, 0.77);
+        box-shadow:         1px 1px 20px rgba(50, 50, 50, 0.77);
+        font-family: Arial;
+        color: gray;
+     }
+
+     body{
+      background: white;
+     }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <!-- Cordova reference -->
+    <script src="./js/config.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./cordova.js"></script> 
+    <script src="./scripts/index.js"></script>
+    <script src="./js/cadastro.js"></script>
+    <script src="./js/function.js"></script>
+    <script type="text/javascript">
+    var auth_check ;
+    auth_check = 0 ;
+
+    
+    $(document).ready(function(){
+
+	/*Setando login e senha*/
+		if(localStorage.getItem('salvar_credenciais') == 1){
+
+			$('#login').val(localStorage.getItem('login_username'));
+			$('#password').val(localStorage.getItem('login_password'));
+      $('#registro').val(localStorage.getItem('login_registro'));
+			$('#salvar_credenciais').prop('checked',1);
+
+
+    }
+
+
+      $('#salvar_credenciais').click(function(){
+      	if($(this).prop('checked')){
+      		localStorage.setItem('salvar_credenciais', 1);
+      		
+      	}
+      	else{
+      		localStorage.setItem('salvar_credenciais', 0);
+      		localStorage.setItem('login_username', '');
+      		localStorage.setItem('login_password', '');
+          localStorage.setItem('login_registro', '');
+      	}
+      });
+      
+      // Cadastrando usuario, após autenticar login
+      $('#logar').click( function(e) {
+      	$('#imagemCadastro').show(600);
+        auth_check = 0 ;
+        //Escondendo botao no inicio do processo de login
+        //$('#button').hide();
+        //$('#progress').show();
+        login($('#login').val(),$('#password').val(), $('#registro').val());
+    });
+ 
+
+    
+  });
+
+
+   
+    </script>
+
+  
+
+    <div class='container' style="height: 100%;text-align: center;vertical-align: middle;">
+    	   <div style="display: inline-block; height: 100%; justify-content: center;margin-top: 20%">
+          <div class="row">
+            <div class="col-sm" style="text-align: center">
+              <!-- <span class="fs-4">Ecossistema</span> -->
+              
+                <div id='imagemCadastro'>
+                  <img src='./img/ecossistema.png' width="60%">
+              </div>
+              
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
+              <label for="registro" class="form-label" style="color: #12263f;">Registro:</label>
+              <input type="text" class="form-control" id='registro' placeholder="" aria-label="Registro" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="row">
+  	        <div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
+    	  			<label for="login" class="form-label" style="color: #12263f;">Usuário:</label>
+    	  			<input type="text" class="form-control" id='login' placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+      			</div>
+          </div>
+          <div class="row">
+            <div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
+      	  			<label for="padding-bottomssword" class="form-label" style="color: #12263f;">Senha:</label>
+      	  			<input type="password" class="form-control" id='password' placeholder="" aria-label="password" aria-describedby="basic-addon1">
+            </div>
+      		</div>
+          <div class="row">
+        		<div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
+      	  			<div class="form-check">
+      				  <input class="form-check-input" type="checkbox" value="" id="salvar_credenciais">
+      				  <label class="form-check-label" for="salvar_credenciais" style="color: #12263f;">
+      				    Salvar credenciais de acesso
+      				  </label>
+      			</div>
+          </div>
+        </div>
+        <div class="row">
+    			<div class="col-sm">
+    	  			<button type="button" class="w-100 btn btn-lg btn-primary" id='logar'>Entrar</button>
+      		</div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <div id='login_success' class="alert alert-success" role="alert" style="display: none; width: 100%">
+              Login efetuado com sucesso.
+            </div>
+            <div id='login_error' class="alert alert-danger" role="alert" style="display: none; width: 100%">
+              Erro ao afetuar login.
+            </div>
+      			<div id='progress' class="col-sm-3" style='display: none; width: 100%'>
+    	  		   <ons-progress-bar indeterminate></ons-progress-bar>
+      			</div>
+		    </div>
+      </div>
+      </div>        
+    </div>
+    
+
+<ons-modal direction="up">
+  <div style="text-align: center">
+    <p>
+      <svg class="progress-circular progress-circular--indeterminate">
+        <circle class="progress-circular__background"/>
+        <circle class="progress-circular__primary progress-circular--indeterminate__primary"/>
+        <circle class="progress-circular__secondary progress-circular--indeterminate__secondary"/>
+      </svg>
+    </p>
+  </div>
+</ons-modal>
+</body>
+</html>
