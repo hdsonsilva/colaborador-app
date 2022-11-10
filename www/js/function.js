@@ -268,7 +268,7 @@ function downloadd(arquivo){
 
 }
 function abrirNavigator( pagina ){
-      ordova.plugins.browser.open(pagina);
+      cordova.plugins.browser.open(pagina);
 }
 
 function abrirURL( pagina , sem_token){
