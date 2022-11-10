@@ -238,7 +238,7 @@ function abrirURL( pagina , sem_token){
     
 }*/
 function imprimir(ano, mes){
-  ordova.plugins.browser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'));
+  cordova.plugins.browser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'));
 }
 
 function esqueceu_senha(){
