@@ -116,6 +116,9 @@ ons-splitter-side[side="left"][animation="overlay"] {
   text-decoration: none;
   font-size: 10pt;
 }
+#tituloApp_{
+  color: white;
+}
 .rodapemsg{
   
   color: rgb(110, 132, 163);
