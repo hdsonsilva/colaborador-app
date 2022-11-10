@@ -258,7 +258,7 @@ function downloadd(arquivo){
 
 }
 function abrirNavigator( pagina ){
-      cordova.InAppBrowser.open(pagina,'_system');
+      cordova.InAppBrowser.open(pagina,'_system', 'toolbar=yes&toolbarcolor=#006e9c');
 }
 
 function abrirURL( pagina , sem_token){
