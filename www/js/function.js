@@ -248,7 +248,7 @@ function esqueceu_senha(){
 }
 function alterar_senha(){
 
-  cordova.InAppBrowser.open(server+'/'+url_changepasswd+'?token='+localStorage.getItem('token'),'_blank');
+  cordova.InAppBrowser.open(server+'/'+url_changepasswd+'?token='+localStorage.getItem('token'),'_blank', 'toolbar=yes&toolbarcolor=#006e9c');
 
 }
 
@@ -258,7 +258,7 @@ function downloadd(arquivo){
 
 }
 function abrirNavigator( pagina ){
-      cordova.InAppBrowser.open(pagina,'_system', 'toolbar=yes&toolbarcolor=#006e9c');
+      cordova.InAppBrowser.open(pagina,'_system');
 }
 
 function abrirURL( pagina , sem_token){
