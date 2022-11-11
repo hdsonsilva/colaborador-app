@@ -20,6 +20,12 @@
     <feature name="BrowserPlugin">
         <param name="android-package" value="by.chemerisuk.cordova.browser.BrowserPlugin" />
     </feature>
+    <feature name="Fingerprint">
+        <param name="android-package" value="de.niklasmerz.cordova.biometric.Fingerprint" />
+    </feature>
+    <platform name="android">
+        <preference name="AndroidXEnabled" value="true" />
+    </platform>
     <name>Colaborador Doctum</name>
     <description>
         Aplicativo os colaboradores da Rede de Ensino Doctum. Consulte seus vencimentos, atualize seus dados cadastrais e mais...

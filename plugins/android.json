@@ -25,6 +25,9 @@
     "cordova-plugin-browser": {
       "ANDROIDX_BROWSER_VERSION": "1.0.+",
       "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "cordova-plugin-fingerprint-aio": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
   "dependent_plugins": {

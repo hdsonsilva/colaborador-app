@@ -23,9 +23,12 @@
                 <category android:name="io.colaborador.doctum" />
             </intent-filter>
         </receiver>
+        <activity android:exported="false" android:name="de.niklasmerz.cordova.biometric.BiometricActivity" android:theme="@style/TransparentTheme" />
     </application>
     <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
     <permission android:name="io.colaborador.doctum.permission.RECEIVE_ADM_MESSAGE" android:protectionLevel="signature" />
     <uses-permission android:name="io.colaborador.doctum.permission.RECEIVE_ADM_MESSAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 </manifest>

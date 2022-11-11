@@ -71,9 +71,19 @@
     <script type="text/javascript">
     var auth_check ;
     auth_check = 0 ;
-
     
+
     $(document).ready(function(){
+
+      $('#exibir_finger_print').show();
+
+      $('#finger_print').click(function(){
+
+        if($(this).is(":checked") ){
+          solicitarFingerPrint();
+        }
+
+      });
 
 	/*Setando login e senha*/
 		if(localStorage.getItem('salvar_credenciais') == 1){
@@ -99,6 +109,8 @@
           localStorage.setItem('login_registro', '');
       	}
       });
+
+      verificaDigital();
       
       // Cadastrando usuario, após autenticar login
       $('#logar').click( function(e) {
@@ -158,6 +170,16 @@
       				    Salvar credenciais de acesso
       				  </label>
       			</div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-sm" id='exibir_finger_print' style="text-align: left !important;padding-bottom: 15px;display: none">
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="finger_print">
+                <label class="form-check-label" for="finger_print" style="color: #12263f;">
+                  Usar Biometria/Face
+                </label>
+            </div>
           </div>
         </div>
         <div class="row">

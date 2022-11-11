@@ -267,6 +267,45 @@ function downloadd(arquivo){
 
 
 }
+
+function verificaDigital(){
+       
+  document.addEventListener('deviceready', function () {
+   
+    Fingerprint.isAvailable(isAvailableSuccess, isAvailableError, {'allowBackup' : true});
+
+    function isAvailableSuccess(result) {
+      $('#exibir_finger_print').show();
+    }
+
+    function isAvailableError(error) {
+      $('#exibir_finger_print').hide(); 
+    }
+
+  });
+}
+
+function solicitarFingerPrint(){
+  document.addEventListener('deviceready', function () {
+
+    Fingerprint.registerBiometricSecret({
+      description: "Some biometric description",
+      secret: "my-super-secret",
+      invalidateOnEnrollment: true,
+      disableBackup: true, // always disabled on Android
+    }, successCallback, errorCallback);
+
+    function successCallback(){
+      alert("Authentication successful");
+    }
+
+    function errorCallback(error){
+      alert("Authentication invalid " + error.message);
+    }      
+
+  });
+}
+
 function abrirNavigator( pagina ){
       cordova.plugins.browser.open(pagina);
 }

@@ -47,6 +47,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         "cordova.plugins.browser"
       ]
+    },
+    {
+      "id": "cordova-plugin-fingerprint-aio.Fingerprint",
+      "file": "plugins/cordova-plugin-fingerprint-aio/www/Fingerprint.js",
+      "pluginId": "cordova-plugin-fingerprint-aio",
+      "clobbers": [
+        "Fingerprint"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -56,6 +64,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-statusbar": "3.0.0",
     "cordova-support-android-plugin": "2.0.4",
-    "cordova-plugin-browser": "2.1.0"
+    "cordova-plugin-browser": "2.1.0",
+    "cordova-plugin-fingerprint-aio": "5.0.1"
   };
 });

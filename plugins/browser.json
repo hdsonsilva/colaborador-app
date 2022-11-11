@@ -24,6 +24,9 @@
     },
     "cordova-plugin-browser": {
       "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "cordova-plugin-fingerprint-aio": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
   "dependent_plugins": {}

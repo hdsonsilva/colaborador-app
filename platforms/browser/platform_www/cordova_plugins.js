@@ -286,6 +286,14 @@ module.exports = [
         "merges": [
             "cordova.plugins.browser"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-fingerprint-aio/www/Fingerprint.js",
+        "id": "cordova-plugin-fingerprint-aio.Fingerprint",
+        "pluginId": "cordova-plugin-fingerprint-aio",
+        "clobbers": [
+            "Fingerprint"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -298,7 +306,8 @@ module.exports.metadata =
     "onesignal-cordova-plugin": "2.11.4",
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-statusbar": "3.0.0",
-    "cordova-plugin-browser": "2.1.0"
+    "cordova-plugin-browser": "2.1.0",
+    "cordova-plugin-fingerprint-aio": "5.0.1"
 }
 // BOTTOM OF METADATA
 });

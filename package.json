@@ -6,6 +6,7 @@
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-file": "^4.3.3",
+    "cordova-plugin-fingerprint-aio": "^5.0.1",
     "cordova-plugin-inappbrowser": "^5.0.0",
     "cordova-plugin-splashscreen": "^6.0.0",
     "cordova-plugin-statusbar": "^3.0.0",
@@ -21,7 +22,8 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-browser": {
         "ANDROIDX_BROWSER_VERSION": "1.0.+"
-      }
+      },
+      "cordova-plugin-fingerprint-aio": {}
     },
     "platforms": [
       "browser",
