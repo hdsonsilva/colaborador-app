@@ -19,6 +19,7 @@
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <allow-intent href="mailto:*" />
+
     <platform name="android">
         <allow-intent href="market:*" />
         <resource-file src="resources/android/onesignal/res/drawable-mdpi-icon.png" target="app/src/main/res/drawable-mdpi/ic_stat_onesignal_default.png" />
@@ -39,6 +40,7 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
+
     <platform name="ios">
         <preference name="deployment-target" value="11.0" />
         <preference name="AllowUntrustedCerts" value="true" />
@@ -46,6 +48,7 @@
         <preference name="allowFileAccessFromFileURLs" value="true" />
         <preference name="allowUniversalAccessFromFileURLs" value="true" />
         <preference name="deployment-target" value="11.0" />
+        <preference name="SwiftVersion" value="5.0" />
         <config-file overwrite="true" parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
             <string>Podemos solicitar acesso a sua localização para armazenar corretamente seu identificador para notificações</string>
         </config-file>
