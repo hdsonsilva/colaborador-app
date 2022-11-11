@@ -271,6 +271,11 @@ function abrirNavigator( pagina ){
       cordova.plugins.browser.open(pagina);
 }
 
+function mailto(email){
+  
+  cordova.InAppBrowser.open("mailto:"+email, "_system", "location=yes");
+}
+
 function abrirURL( pagina , sem_token){
       
       

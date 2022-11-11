@@ -18,21 +18,21 @@ function view_ajuda(retornos){
     conteudo_lista += '<ons-card>';
     conteudo_lista += "<table width='100%'><tr>";
     conteudo_lista += "<td width='50%'>Benefícios: </td>";
-    conteudo_lista += "<td width='50%' align='right'><a href='mailto:beneficios@doctum.edu.br'>Clique aqui</a></td>";
+    conteudo_lista += "<td width='50%' align='right'><a href='#' onclick='mailto(\"beneficios@doctum.edu.br\")'>Clique aqui</a></td>";
     conteudo_lista += "</tr></table>";
     conteudo_lista += "</ons-card>";
 
     conteudo_lista += '<ons-card>';
     conteudo_lista += "<table width='100%'><tr>";
     conteudo_lista += "<td width='50%'>Plano de Saúde: </td>";
-    conteudo_lista += "<td width='50%' align='right'><a href='mailto:beneficios@doctum.edu.br'>Clique aqui</a></td>";
+    conteudo_lista += "<td width='50%' align='right'><a href='#' onclick='mailto(\"beneficios@doctum.edu.br\")'>Clique aqui</a></td>";
     conteudo_lista += "</tr></table>";
     conteudo_lista += "</ons-card>";
 
     conteudo_lista += '<ons-card>';
     conteudo_lista += "<table width='100%'><tr>";
     conteudo_lista += "<td width='50%'>Folha de Pagamento: </td>";
-    conteudo_lista += "<td width='50%' align='right'><a href='mailto:folhadepagamento@doctum.edu.br'>Clique aqui</a></td>";
+    conteudo_lista += "<td width='50%' align='right'><a href='#' onclick='mailto(\"folhadepagamento@doctum.edu.br\")'>Clique aqui</a></td>";
     conteudo_lista += "</tr></table>";
     conteudo_lista += "</ons-card>";
     
