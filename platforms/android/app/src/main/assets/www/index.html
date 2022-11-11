@@ -75,7 +75,7 @@
 
     $(document).ready(function(){
 
-      
+      $('#exibir_finger_print').show();
 
       $('#finger_print').click(function(){
 
@@ -156,6 +156,7 @@
     	  			<input type="text" class="form-control" id='login' placeholder="" aria-label="Username" aria-describedby="basic-addon1">
       			</div>
           </div>
+
           <div class="row">
             <div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
       	  			<label for="padding-bottomssword" class="form-label" style="color: #12263f;">Senha:</label>
@@ -164,8 +165,8 @@
       		</div>
           <div class="row">
         		<div class="col-sm" style="text-align: left !important;padding-bottom: 15px">
-      	  			<div class="form-check">
-      				  <input class="form-check-input" type="checkbox" value="" id="salvar_credenciais">
+      	  			<div class="form-check form-switch">
+      				  <input class="form-check-input" type="checkbox" role="switch"  value="" id="salvar_credenciais">
       				  <label class="form-check-label" for="salvar_credenciais" style="color: #12263f;">
       				    Salvar credenciais de acesso
       				  </label>
@@ -174,8 +175,8 @@
         </div>
           <div class="row">
             <div class="col-sm" id='exibir_finger_print' style="text-align: left !important;padding-bottom: 15px;display: none">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="finger_print">
+                <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" value="" id="finger_print">
                 <label class="form-check-label" for="finger_print" style="color: #12263f;">
                   Usar Biometria/Face
                 </label>
@@ -204,6 +205,7 @@
     	  		   <ons-progress-bar indeterminate></ons-progress-bar>
       			</div>
 		    </div>
+
       </div>
       </div>        
     </div>

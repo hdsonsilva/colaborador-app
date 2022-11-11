@@ -288,19 +288,17 @@ function verificaDigital(){
 function solicitarFingerPrint(){
   document.addEventListener('deviceready', function () {
 
-    Fingerprint.registerBiometricSecret({
-      description: "Some biometric description",
-      secret: "my-super-secret",
-      invalidateOnEnrollment: true,
+    Fingerprint.loadBiometricSecret({
+      description: "Insira sua Digital",
       disableBackup: true, // always disabled on Android
     }, successCallback, errorCallback);
 
     function successCallback(){
-      alert("Authentication successful");
+      alert("Deu bom!");
     }
 
     function errorCallback(error){
-      alert("Authentication invalid " + error.message);
+      alert("Fudeu!!!");
     }      
 
   });
