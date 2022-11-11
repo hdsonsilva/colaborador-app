@@ -35,14 +35,11 @@ function controle(event){
     }
 
     //Se estiver na pagina Academico
-    else if(event.target.matches('#pageHorario')){
-      dados = {
-        'apitoken': localStorage.getItem('token'),
-        'periodo_letivo': localStorage.getItem('periodoletivo')
-      }
-      $('#pageHorarioList').html('');
+    else if(event.target.matches('#pageAjuda')){
+      
+      $('#pageAjudaList').html('');
 
-      buscaAcoes('alunos/api/horario',dados,tipoenvio);
+      retornoAcao('ajuda', '');
     }
 
      //Se estiver na pagina Bilhetes
