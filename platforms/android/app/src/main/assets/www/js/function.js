@@ -238,7 +238,7 @@ function abrirURL( pagina , sem_token){
     
 }*/
 function imprimir(ano, mes){
-  cordova.InAppBrowser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'),'_system');
+  cordova.plugins.browser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'));
 }
 
 function esqueceu_senha(){
@@ -246,7 +246,7 @@ function esqueceu_senha(){
 }
 function alterar_senha(){
 
-  cordova.InAppBrowser.open(server+'/'+url_changepasswd+'?token='+localStorage.getItem('token'),'_blank', 'toolbar=yes,toolbarcolor=#006e9c');
+  cordova.plugins.browser.open(server+'/'+url_changepasswd+'?token='+localStorage.getItem('token'));
 
 }
 
@@ -257,8 +257,8 @@ function downloadd(arquivo){
     //Alterando altura da barra de menu do app
     if(device.platform.toUpperCase() === 'ANDROID'){
       //cordova.InAppBrowser.open(server+'/'+url_down+'?arquivo='+arquivo+'&acao=inline&token='+localStorage.getItem('token'),'_system');
-      var janela = cordova.plugins.browser.open(server+'/'+url_down+'?arquivo='+arquivo+'&acao=inline&token='+localStorage.getItem('token'));
-      janela.close();
+      cordova.plugins.browser.open(server+'/'+url_down+'?arquivo='+arquivo+'&acao=inline&token='+localStorage.getItem('token'));
+
     }
     else{
       cordova.plugins.browser.open(server+'/'+url_down+'?arquivo='+arquivo+'&acao=inline&token='+localStorage.getItem('token'));
@@ -268,7 +268,7 @@ function downloadd(arquivo){
 
 }
 function abrirNavigator( pagina ){
-      cordova.InAppBrowser.open(pagina,'_system');
+      cordova.plugins.browser.open(pagina);
 }
 
 function abrirURL( pagina , sem_token){

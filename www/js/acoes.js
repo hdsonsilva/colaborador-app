@@ -66,8 +66,8 @@ function retornoAcao(acao, retorno){
         
         view_irrf(retorno);
     }
-    else if(acao == 'alunos/api/horario'){
-        view_horario(retorno);
+    else if(acao == 'ajuda'){
+        view_ajuda(retorno);
     }
     else if(acao == 'alunos/api/mural/ver-agenda'){
         view_agenda(retorno);
