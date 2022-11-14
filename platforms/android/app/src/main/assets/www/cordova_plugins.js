@@ -55,6 +55,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "Fingerprint"
       ]
+    },
+    {
+      "id": "com-sarriaroman-photoviewer.PhotoViewer",
+      "file": "plugins/com-sarriaroman-photoviewer/www/PhotoViewer.js",
+      "pluginId": "com-sarriaroman-photoviewer",
+      "clobbers": [
+        "PhotoViewer"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -65,6 +73,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-statusbar": "3.0.0",
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-browser": "2.1.0",
-    "cordova-plugin-fingerprint-aio": "5.0.1"
+    "cordova-plugin-fingerprint-aio": "5.0.1",
+    "com-sarriaroman-photoviewer": "1.2.4"
   };
 });

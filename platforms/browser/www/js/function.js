@@ -267,6 +267,49 @@ function downloadd(arquivo){
 
 
 }
+
+function verificaDigital(){
+       
+  document.addEventListener('deviceready', function () {
+   
+    Fingerprint.isAvailable(isAvailableSuccess, isAvailableError, {'allowBackup' : true});
+
+    function isAvailableSuccess(result) {
+      $('#exibir_finger_print').show();
+    }
+
+    function isAvailableError(error) {
+      $('#exibir_finger_print').hide(); 
+    }
+
+  });
+}
+
+function solicitarFingerPrint(){
+  document.addEventListener('deviceready', function () {
+
+    Fingerprint.show({
+      title: 'Colaborador Doctum: Login',
+      description: "Insira sua Digital",
+      disableBackup: true, // always disabled on Android
+    }, successCallback, errorCallback);
+
+    function successCallback(){
+      
+      localStorage.setItem('finger_print_control',1);
+      localStorage.setItem('salvar_credenciais', 1);
+      login($('#login').val(),$('#password').val(), $('#registro').val());
+      
+    }
+
+    function errorCallback(error){
+      localStorage.setItem('finger_print_control','0');
+      alert("Ocorreu um erro ao usar o leitor biométrico/Faceid");
+    }      
+
+  });
+}
+
 function abrirNavigator( pagina ){
       cordova.plugins.browser.open(pagina);
 }

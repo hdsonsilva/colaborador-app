@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "com-sarriaroman-photoviewer": "^1.2.5",
     "cordova-android": "^10.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-browser": "^2.1.0",
@@ -23,7 +24,8 @@
       "cordova-plugin-browser": {
         "ANDROIDX_BROWSER_VERSION": "1.0.+"
       },
-      "cordova-plugin-fingerprint-aio": {}
+      "cordova-plugin-fingerprint-aio": {},
+      "com-sarriaroman-photoviewer": {}
     },
     "platforms": [
       "browser",

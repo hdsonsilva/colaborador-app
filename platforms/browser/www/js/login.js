@@ -84,7 +84,7 @@ function login(usuario, senha, registro, app){
 
 function deslogar(){
         showModal('show');
-        
+        localStorage.setItem('app_deslogando',1);
         setTimeout(direcionar, 500, './index.html');
 
         return false ;

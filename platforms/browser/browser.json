@@ -44,6 +44,9 @@
     },
     "cordova-plugin-fingerprint-aio": {
       "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
   "dependent_plugins": {},
@@ -342,6 +345,14 @@
       "clobbers": [
         "Fingerprint"
       ]
+    },
+    {
+      "file": "plugins/com-sarriaroman-photoviewer/www/PhotoViewer.js",
+      "id": "com-sarriaroman-photoviewer.PhotoViewer",
+      "pluginId": "com-sarriaroman-photoviewer",
+      "clobbers": [
+        "PhotoViewer"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -353,6 +364,7 @@
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-statusbar": "3.0.0",
     "cordova-plugin-browser": "2.1.0",
-    "cordova-plugin-fingerprint-aio": "5.0.1"
+    "cordova-plugin-fingerprint-aio": "5.0.1",
+    "com-sarriaroman-photoviewer": "1.2.4"
   }
 }

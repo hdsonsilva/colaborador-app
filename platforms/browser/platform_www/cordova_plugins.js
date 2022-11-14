@@ -294,6 +294,14 @@ module.exports = [
         "clobbers": [
             "Fingerprint"
         ]
+    },
+    {
+        "file": "plugins/com-sarriaroman-photoviewer/www/PhotoViewer.js",
+        "id": "com-sarriaroman-photoviewer.PhotoViewer",
+        "pluginId": "com-sarriaroman-photoviewer",
+        "clobbers": [
+            "PhotoViewer"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -307,7 +315,8 @@ module.exports.metadata =
     "cordova-plugin-device": "2.1.0",
     "cordova-plugin-statusbar": "3.0.0",
     "cordova-plugin-browser": "2.1.0",
-    "cordova-plugin-fingerprint-aio": "5.0.1"
+    "cordova-plugin-fingerprint-aio": "5.0.1",
+    "com-sarriaroman-photoviewer": "1.2.4"
 }
 // BOTTOM OF METADATA
 });

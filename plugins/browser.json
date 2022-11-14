@@ -27,6 +27,9 @@
     },
     "cordova-plugin-fingerprint-aio": {
       "PACKAGE_NAME": "io.colaborador.doctum"
+    },
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "io.colaborador.doctum"
     }
   },
   "dependent_plugins": {}
