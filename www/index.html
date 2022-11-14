@@ -75,12 +75,23 @@
 
     $(document).ready(function(){
 
-      $('#exibir_finger_print').show();
-
       $('#finger_print').click(function(){
 
         if($(this).is(":checked") ){
-          solicitarFingerPrint();
+          localStorage.setItem('finger_print_control',1);
+          localStorage.setItem('salvar_credenciais', 1);
+          $('#salvar_credenciais').prop('checked',1);
+        }
+        else{
+          localStorage.setItem('finger_print_control',0);
+          $('#login').val('');
+          localStorage.setItem('login_username','');
+          $('#password').val('');
+          localStorage.setItem('login_password','');
+          $('#registro').val('');
+          localStorage.setItem('login_registro','');
+          $('#salvar_credenciais').prop('checked',0);
+          localStorage.setItem('salvar_credenciais', 0);
         }
 
       });
@@ -92,9 +103,19 @@
 			$('#password').val(localStorage.getItem('login_password'));
       $('#registro').val(localStorage.getItem('login_registro'));
 			$('#salvar_credenciais').prop('checked',1);
-
+      
+      if(localStorage.getItem('finger_print_control') == 1){
+        $('#finger_print').prop('checked',1);
+        
+        if(localStorage.getItem('app_deslogando') != 1){
+          setTimeout(function(){ solicitarFingerPrint();}, 700);
+        }
+        localStorage.setItem('app_deslogando', null);
+      }
 
     }
+
+  
 
 
       $('#salvar_credenciais').click(function(){
@@ -119,7 +140,12 @@
         //Escondendo botao no inicio do processo de login
         //$('#button').hide();
         //$('#progress').show();
-        login($('#login').val(),$('#password').val(), $('#registro').val());
+        if(localStorage.getItem('finger_print_control') == 1){
+          solicitarFingerPrint();
+        }
+        else{
+          login($('#login').val(),$('#password').val(), $('#registro').val());
+        }
     });
  
 

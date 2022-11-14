@@ -288,17 +288,23 @@ function verificaDigital(){
 function solicitarFingerPrint(){
   document.addEventListener('deviceready', function () {
 
-    Fingerprint.loadBiometricSecret({
+    Fingerprint.show({
+      title: 'Colaborador Doctum: Login',
       description: "Insira sua Digital",
       disableBackup: true, // always disabled on Android
     }, successCallback, errorCallback);
 
     function successCallback(){
-      alert("Deu bom!");
+      
+      localStorage.setItem('finger_print_control',1);
+      localStorage.setItem('salvar_credenciais', 1);
+      login($('#login').val(),$('#password').val(), $('#registro').val());
+      
     }
 
     function errorCallback(error){
-      alert("Fudeu!!!");
+      localStorage.setItem('finger_print_control','0');
+      alert("Ocorreu um erro ao usar o leitor biométrico/Faceid");
     }      
 
   });
