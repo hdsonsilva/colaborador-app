@@ -37,9 +37,11 @@ function controle(event){
     //Se estiver na pagina Academico
     else if(event.target.matches('#pageAjuda')){
       
-      $('#pageAjudaList').html('');
-
-      retornoAcao('ajuda', '');
+      dados = {
+        'token': localStorage.getItem('token')
+      }
+      buscaAcoes('/api/busca-ajuda',dados,tipoenvio);
+      
     }
 
      //Se estiver na pagina Bilhetes

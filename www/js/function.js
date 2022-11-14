@@ -314,6 +314,10 @@ function abrirNavigator( pagina ){
       cordova.plugins.browser.open(pagina);
 }
 
+function helpdesk( pagina ){
+      cordova.plugins.browser.open(pagina);
+}
+
 function mailto(email){
   
   cordova.InAppBrowser.open("mailto:"+email, "_system", "location=yes");
