@@ -13,7 +13,7 @@ var url_down = 'download';
 var url_changepasswd = 'senha' ;
 
 
-var idonesignal = "7bf5d508-d86e-4c4d-ad52-80611a5759fa";
+var idonesignal = "de2bae19-d92e-4db8-bb7f-622b0877f027";
 var debug = 0 ;
 
 var controle_mensagem_atualizar = 1;
