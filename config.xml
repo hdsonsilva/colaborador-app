@@ -19,7 +19,6 @@
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <allow-intent href="mailto:*" />
-
     <platform name="android">
         <allow-intent href="market:*" />
         <resource-file src="resources/android/onesignal/res/drawable-mdpi-icon.png" target="app/src/main/res/drawable-mdpi/ic_stat_onesignal_default.png" />
@@ -40,7 +39,6 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-
     <platform name="ios">
         <preference name="deployment-target" value="11.0" />
         <preference name="AllowUntrustedCerts" value="true" />
