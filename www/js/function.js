@@ -237,8 +237,12 @@ function abrirURL( pagina , sem_token){
   window.location.href='./html/page_externa.html'; 
     
 }*/
-function imprimir(ano, mes){
-  cordova.plugins.browser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token'));
+function imprimir(ano, mes, tipofolha){
+  var complemento_tipofolha = '';
+  if(tipofolha == 9){
+    complemento_tipofolha = "&idtipofolha=9";
+  }
+  cordova.plugins.browser.open(server+'/'+url_print+'?acao=inline&mes='+mes+'&ano='+ano+'&token='+localStorage.getItem('token')+complemento_tipofolha);
 }
 
 function esqueceu_senha(){

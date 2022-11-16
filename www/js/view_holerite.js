@@ -9,7 +9,7 @@ function view_holerite(retornos){
     //Alterando título do app
     
     $('#tituloApp').html("Holerites");
-
+    
     i = 2021 ;
     if(retornos['anos'] ){
         
@@ -20,9 +20,14 @@ function view_holerite(retornos){
             for(j = 1 ; j <= 11 ; j+=2){
 
                 conteudo_lista += "<tr >";
-                conteudo_lista += "<td width='50%' align='center' style='padding-top:20px'><a class='clicavel' href='#' onclick='imprimir("+i+", "+j+");'>"+(retorno[i][j] ? "<ons-icon style='color:#4169E1;vertical-align: bottom;' icon='fa-calendar' size='40px, material:40px'></ons-icon><br>"+meses[(j)] : '')+"</a></td>";
-                conteudo_lista += "<td width='50%' align='center' style='padding-top:20px'><a class='clicavel' href='#' onclick='imprimir("+i+", "+(j+1)+");'>"+(retorno[i][j+1] ? "<ons-icon style='color:#4169E1;vertical-align: bottom;' icon='fa-calendar' size='40px, material:40px'></ons-icon><br>"+meses[(j+1)] : '')+"</a></td></tr>";
+                conteudo_lista += "<td width='50%' align='center' style='padding-top:20px'><a class='clicavel' href='#' onclick='imprimir("+i+", "+j+", 1);'>"+(retorno[i][j] ? "<ons-icon style='color:#4169E1;vertical-align: bottom;' icon='fa-calendar' size='40px, material:40px'></ons-icon><br>"+meses[(j)] : '')+"</a></td>";
+                conteudo_lista += "<td width='50%' align='center' style='padding-top:20px'><a class='clicavel' href='#' onclick='imprimir("+i+", "+(j+1)+", 1);'>"+(retorno[i][j+1] ? "<ons-icon style='color:#4169E1;vertical-align: bottom;' icon='fa-calendar' size='40px, material:40px'></ons-icon><br>"+meses[(j+1)] : '')+"</a></td></tr>";
                 
+            }
+            if(retorno[i]['decimo_terceiro']){
+                conteudo_lista += "<tr >";
+                conteudo_lista += "<td width='50%' align='center' style='padding-top:20px'><a class='clicavel' href='#' onclick='imprimir("+i+", 11"+", 9);'>"+(retorno[i]['decimo_terceiro'][1] ? "<ons-icon style='color:#4169E1;vertical-align: bottom;' icon='fa-calendar' size='40px, material:40px'></ons-icon><br>13º<br>Parcela 1" : "")+"</a></td>";
+                conteudo_lista += "<td width='50%' align='center' style='padding-top:20px'><a class='clicavel' href='#' onclick='imprimir("+i+", 12"+", 9);'>"+(retorno[i]['decimo_terceiro'][2] ? "<ons-icon style='color:#4169E1;vertical-align: bottom;' icon='fa-calendar' size='40px, material:40px'></ons-icon><br>13º<br>Parcela 2" : "")+"</a></td></tr>";
             }
             conteudo_lista += "</tr></table></div>";
             conteudo_lista += "</ons-card>";
